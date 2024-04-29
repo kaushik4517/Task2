@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        
+        <div class="01">
+    <div class="square" style="height: 330px; width: 330px; background-color: rgb(181, 172, 172);">
+    </div>
+    <div class="button" style="margin: 1%; display: flex; gap: 2%;margin: 4px; padding: 4px;">
+        <button class="red" style="margin: 2px; padding: 8px; color: azure; background-color: red;">Red</button>
+        <button class="green" style="margin: 2px; padding: 8px; color: azure; background-color: green;">Green</button>
+        <button class="black" style="margin: 2px; padding: 8px; color: azure; background-color: black;">Black</button>
+        <button class="clear" style="margin: 2px; padding: 8px; color: black; background-color: #ddd;">Clear</button>
+    </div>
+    </div>
+
+    <!-- -------------------------------- -->
+
+    <div class="02" style="position: absolute; display: block;top: 2%;right: 38%;">
+    <section id="colorBox" style="height: 330px; width: 330px; background-color: #ddd;"></section>
+
+    <form>
+
+        <!-- // Creates a radio button with the value "red" and associates it with the JavaScript function changeColor() when clicked.
+             The this.value passes the value of the clicked radio button to the function -->
+
+        <input type="radio" name="color" value="red" onclick="changeColor(this.value)"> Red
+        <input type="radio" name="color" value="green" onclick="changeColor(this.value)"> Green
+        <input type="radio" name="color" value="black" onclick="changeColor(this.value)"> Black
+        <input type="radio" name="color" value="#ddd" onclick="changeColor(this.value)"> Clear
+    </form>
+
+    </div>
+    
+
+<!-- ----------------------------------->
+     <!-- <div class="cs"> -->
+        <div class="03" style="position: absolute; display: block;top: 2%;right: 2%;">
+    <section id="selectcolorBox" style="height: 330px; width: 330px; background-color: #ddd;"></section>
+<form>
+    
+    <select id="colorSelect" onchange="changesColor(this.value)">
+        <option value="#">Select a color of your choice </option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="black">Black</option>
+        <option value="#ddd">clear</option>
+    </select>
+
+    </form>
+    </div>
+    
+</form>
+
+
+</div>
+
+ <script>
+    const square = document.querySelector('.square')
+
+const redb = document.querySelector('.red')
+const greenb = document.querySelector('.green')
+const blackb = document.querySelector('.black')
+const clrb = document.querySelector('.clear')
+
+redb.addEventListener('click', () => {
+    square.style.backgroundColor = 'red'
+
+})
+
+greenb.addEventListener('click', () => {
+    square.style.backgroundColor = 'green'
+
+})
+
+clrb.addEventListener('click', () => {
+    square.style.backgroundColor = '#bbb'
+
+})
+
+
+blackb. addEventListener('click', () => {
+    square.style.backgroundColor = 'black'
+
+})
+
+
+//An event listener is a function that waits for a specific event to occur and then performs an action.//
+
+//The querySelector method is used to find the first element in the document that matches a specified CSS selector.//
+
+
+
+function changeColor(color) {
+    document.getElementById('colorBox').style.backgroundColor = color;
+}
+
+//Fetch the location of the field by colorbox id name and the set the value of name color with in individual 
+//value which is in the html code by using these.value properties// 
+
+
+
+function changesColor(color) {
+    document.getElementById('selectcolorBox').style.backgroundColor = color;
+}
+
+//same logic as above
+ </script>
+</body>
+
+</html>
